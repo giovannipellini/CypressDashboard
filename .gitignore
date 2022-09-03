@@ -4,3 +4,9 @@
 
 /CypressDashboard/CypressDashboard/bin/Debug/net6.0
 /CypressDashboard/CypressDashboard/obj
+/CypressDashboard/CypressDashboardModel/bin/Debug/net6.0
+/CypressDashboard/CypressDashboardModel/obj
+/CypressDashboard/MongoWS/bin/Debug/net6.0
+/CypressDashboard/MongoWS/obj
+/MongoDBAdapter/bin/Debug/net6.0
+/MongoDBAdapter/obj
