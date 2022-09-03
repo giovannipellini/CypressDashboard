@@ -6,11 +6,7 @@ namespace MongoWS.Controllers
 	[Route("[controller]")]
 	public class CypressTestController : ControllerBase
 	{
-		private static readonly string[] Summaries = new[]
-		{
-		"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-	};
-
+		
 		private readonly ILogger<CypressTestController> _logger;
 
 		public CypressTestController(ILogger<CypressTestController> logger)
@@ -18,11 +14,26 @@ namespace MongoWS.Controllers
 			_logger = logger;
 		}
 
-		[HttpGet(Name = "GetWeatherForecast")]
-		public IEnumerable<CypressDashboard.CypressTest> Get(int nCountMax)
+
+        [HttpGet("~/getsomething")]
+        public IEnumerable<CypressDashboard.CypressTest> Get(int nCountMax)
 		{
 			CypressDashboard.MongoDBAdapter adapter = new CypressDashboard.MongoDBAdapter();
 			return adapter.GetLastTests(nCountMax);
 		}
-	}
+
+        [HttpGet("~/getothersomething")]
+        public IEnumerable<CypressDashboard.CypressTest> GetOtherTests()
+        {
+            CypressDashboard.MongoDBAdapter adapter = new CypressDashboard.MongoDBAdapter();
+            return adapter.GetLastTests(1);
+        }
+
+        //[HttpGet(Name = "GetLastTests2")]
+        //public IEnumerable<CypressDashboard.CypressTest> Get2(int nCountMax)
+        //{
+        //    CypressDashboard.MongoDBAdapter adapter = new CypressDashboard.MongoDBAdapter();
+        //    return adapter.GetLastTests(nCountMax);
+        //}
+    }
 }
