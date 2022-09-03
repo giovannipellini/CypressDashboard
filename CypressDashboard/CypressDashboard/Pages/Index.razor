@@ -1,0 +1,101 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<RadzenButton Text="@text"></RadzenButton>
+@code {
+  string text = "Ciao";
+}
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Radzen Blazor Chart donut series</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 offset-lg-3 my-5">
+
+                <RadzenChart>
+                    <RadzenDonutSeries Data="@revenue" CategoryProperty="Quarter" ValueProperty="Revenue"  >
+                       @* <ChildContent>
+                            <RadzenSeriesDataLabels Visible="@showDataLabels" />
+                        </ChildContent>*@
+                        <TitleTemplate>
+                            <div class="rz-donut-content">
+                                <div>Revenue</div> 
+                                <div>for 2020</div>
+                            </div>
+                        </TitleTemplate>
+                        
+                    </RadzenDonutSeries>
+                </RadzenChart>
+            </div>
+        </div>
+    </div>
+
+    
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@code {
+    bool showDataLabels = false;
+    static int currentCount = 20000;
+
+    private void IncrementCount()
+    {
+        currentCount+=10000;
+        revenue = new DataItem[] {
+    new DataItem
+    {
+    Quarter = "Q1",
+    Revenue = currentCount
+    },
+    new DataItem
+    {
+    Quarter = "Q2",
+    Revenue = 40000
+    },
+    new DataItem
+    {
+    Quarter = "Q3",
+    Revenue = 50000
+    },
+    new DataItem
+    {
+    Quarter = "Q4",
+    Revenue = 80000
+    },
+    };
+    }
+    class DataItem
+    {
+        public string Quarter { get; set; }
+        public double Revenue { get; set; }
+    }
+
+    DataItem[] revenue = new DataItem[] {
+    new DataItem
+    {
+    Quarter = "Q1",
+    Revenue = currentCount
+    },
+    new DataItem
+    {
+    Quarter = "Q2",
+    Revenue = 40000
+    },
+    new DataItem
+    {
+    Quarter = "Q3",
+    Revenue = 50000
+    },
+    new DataItem
+    {
+    Quarter = "Q4",
+    Revenue = 80000
+    },
+    };
+}
+
+
