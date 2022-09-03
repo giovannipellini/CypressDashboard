@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\MongoWS</_PublishTargetUrl>
+    <History>True|2022-09-03T14:58:20.5979263Z;True|2022-09-03T16:56:38.6474740+02:00;False|2022-09-03T16:56:12.5533101+02:00;True|2022-09-03T16:35:04.7521997+02:00;False|2022-09-03T16:34:38.9665771+02:00;True|2022-09-03T16:19:21.3545805+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

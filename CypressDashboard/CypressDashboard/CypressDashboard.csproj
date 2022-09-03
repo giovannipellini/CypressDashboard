@@ -12,4 +12,8 @@
     <PackageReference Include="Radzen.Blazor" Version="3.20.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CypressDashboardModel\CypressDashboardModel.csproj" />
+  </ItemGroup>
+
 </Project>
