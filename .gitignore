@@ -15,3 +15,7 @@
 /.vs
 /CypressDashboard/.vs/CypressDashboard/FileContentIndex
 /CypressDashboard/.vs/ProjectEvaluation
+*.v2
+/CypressDashboard/CypressDashboardModel/bin/Release/net6.0
+/CypressDashboard/MongoWS/bin/Release/net6.0
+/MongoDBAdapter/bin/Release/net6.0

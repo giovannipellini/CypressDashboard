@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject HttpClient Http
 
 <PageTitle>Index</PageTitle>
 
@@ -8,8 +9,17 @@ Welcome to your new app.
 
 <RadzenButton Text="@text"></RadzenButton>
 @code {
-  string text = "Ciao";
+    string text = "Ciao";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var test = await Http.GetFromJsonAsync<CypressTest[]>("https://localhost:5001/getsomething");
+        currentCount = test.Length;
+    }
+
 }
+
+
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 <h1>Radzen Blazor Chart donut series</h1>

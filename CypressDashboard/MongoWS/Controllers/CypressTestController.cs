@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MongoWS.Controllers
@@ -14,7 +15,7 @@ namespace MongoWS.Controllers
 			_logger = logger;
 		}
 
-
+       
         [HttpGet("~/getsomething")]
         public IEnumerable<CypressDashboard.CypressTest> Get(int nCountMax)
 		{
