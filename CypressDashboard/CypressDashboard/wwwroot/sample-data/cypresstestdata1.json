@@ -1,0 +1,3050 @@
+﻿[
+  {
+    "_id": {
+      "timestamp": 1662048144,
+      "machine": 3370320,
+      "pid": -7176,
+      "increment": 3638831,
+      "creationTime": "2022-09-01T16:02:24Z"
+    },
+    "stats": {
+      "uid": "e138d296-53f0-4661-bcf4-6a664447aeef",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-08-31T12:31:58.067Z",
+      "end": "2022-08-31T12:32:02.862Z",
+      "duration": 4795,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "ecb0daa2-5c53-4ae6-9b3f-29d690cfc80b",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1481,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "518ca7bb-9a48-4e62-a096-9ca9eda433a3",
+                "parentUUID": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1203,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "c7f9af31-d360-4820-8bdd-7ccfd9fac18a",
+                "parentUUID": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "518ca7bb-9a48-4e62-a096-9ca9eda433a3", "c7f9af31-d360-4820-8bdd-7ccfd9fac18a" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2684,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662048145,
+      "machine": 833649,
+      "pid": 12938,
+      "increment": 5501945,
+      "creationTime": "2022-09-01T16:02:25Z"
+    },
+    "stats": {
+      "uid": "e138d296-53f0-4661-bcf4-6a664447aeef",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-08-31T12:31:58.067Z",
+      "end": "2022-08-31T12:32:02.862Z",
+      "duration": 4795,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "ecb0daa2-5c53-4ae6-9b3f-29d690cfc80b",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1481,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "518ca7bb-9a48-4e62-a096-9ca9eda433a3",
+                "parentUUID": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1203,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "c7f9af31-d360-4820-8bdd-7ccfd9fac18a",
+                "parentUUID": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "518ca7bb-9a48-4e62-a096-9ca9eda433a3", "c7f9af31-d360-4820-8bdd-7ccfd9fac18a" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2684,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662048146,
+      "machine": 9331318,
+      "pid": -5056,
+      "increment": 8595847,
+      "creationTime": "2022-09-01T16:02:26Z"
+    },
+    "stats": {
+      "uid": "e138d296-53f0-4661-bcf4-6a664447aeef",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-08-31T12:31:58.067Z",
+      "end": "2022-08-31T12:32:02.862Z",
+      "duration": 4795,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "ecb0daa2-5c53-4ae6-9b3f-29d690cfc80b",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1481,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "518ca7bb-9a48-4e62-a096-9ca9eda433a3",
+                "parentUUID": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1203,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "c7f9af31-d360-4820-8bdd-7ccfd9fac18a",
+                "parentUUID": "4127fc3d-b206-4593-9385-aef5e97d5bd7",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "518ca7bb-9a48-4e62-a096-9ca9eda433a3", "c7f9af31-d360-4820-8bdd-7ccfd9fac18a" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2684,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662227694,
+      "machine": 2556236,
+      "pid": 1292,
+      "increment": 3569786,
+      "creationTime": "2022-09-03T17:54:54Z"
+    },
+    "stats": {
+      "uid": "74ce8e9a-bb52-4114-a69c-79a7659ba3ed",
+      "suites": 1,
+      "tests": 1,
+      "passes": 1,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T15:11:19.237Z",
+      "end": "2022-09-03T15:11:36.119Z",
+      "duration": 16882,
+      "testsRegistered": 1,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "add05ebf-08d9-4a94-aa55-92fdaea03c05",
+        "title": "",
+        "fullFile": "cypress\\e2e\\ambienti.cy.js",
+        "file": "cypress\\e2e\\ambienti.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "9ab4b01b-e87c-46b3-881a-e98331d947cc",
+            "title": "Ambienti Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "list of all VP servers",
+                "fullTitle": "Ambienti Page list of all VP servers",
+                "timedOut": null,
+                "duration": 2922,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Ambienti.aspx');\ncy.get('button[data-target=\".as1alliwpr4774\"').click(); //cy.get('#ctl00_Contentplaceholder_ctl00_GridViewServer_ctl02_lnkLoadAllServer').click();\ncy.get('#ctl00_Contentplaceholder_ctl00_RepeaterCategories_ctl00_lnkLoadAllServer').click();\ncy.get('#myModalDiv > .modal-content > .modal-body > h5').should(\"contain\", \"VERA PROTEZIONE\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "79a60ba8-98c9-4a40-86b6-2b852cfa14bf",
+                "parentUUID": "9ab4b01b-e87c-46b3-881a-e98331d947cc",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "79a60ba8-98c9-4a40-86b6-2b852cfa14bf" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2922,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662227695,
+      "machine": 9123767,
+      "pid": 28765,
+      "increment": 9002656,
+      "creationTime": "2022-09-03T17:54:55Z"
+    },
+    "stats": {
+      "uid": "74ce8e9a-bb52-4114-a69c-79a7659ba3ed",
+      "suites": 1,
+      "tests": 4,
+      "passes": 4,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T15:11:43.379Z",
+      "end": "2022-09-03T15:11:51.05Z",
+      "duration": 7671,
+      "testsRegistered": 4,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "86f04654-cff9-4b36-a8d2-d77a5fae40b4",
+        "title": "",
+        "fullFile": "cypress\\e2e\\consultazione.cy.js",
+        "file": "cypress\\e2e\\consultazione.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "23e6d37e-b524-4355-83c7-4e962f482ead",
+            "title": "Consultazione Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "click on Consultazione link",
+                "fullTitle": "Consultazione Page click on Consultazione link",
+                "timedOut": null,
+                "duration": 1183,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('#ctl00_btnReport').click();\ncy.url().should(\"contain\", \"Consultazione.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "1755083e-0188-4563-9b4b-3d7aa0bed18e",
+                "parentUUID": "23e6d37e-b524-4355-83c7-4e962f482ead",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search nothing",
+                "fullTitle": "Consultazione Page search nothing",
+                "timedOut": null,
+                "duration": 1136,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Consultazione.aspx');\ncy.get('#ctl00_Contentplaceholder_ddlAmbienteFeweb').select('NESSUNO');\ncy.get('.input-group > .dropdown').click();\ncy.get('span').contains('NESSUNO');\ncy.get('#ctl00_Contentplaceholder_btnCerca').click();\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "7785bf5f-5938-454b-9349-35be22b47b8f",
+                "parentUUID": "23e6d37e-b524-4355-83c7-4e962f482ead",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search non existing policy",
+                "fullTitle": "Consultazione Page search non existing policy",
+                "timedOut": null,
+                "duration": 1440,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('987654321');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "59e3d0fd-0692-42d2-8846-4ac08066c61b",
+                "parentUUID": "23e6d37e-b524-4355-83c7-4e962f482ead",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search existing policy",
+                "fullTitle": "Consultazione Page search existing policy",
+                "timedOut": null,
+                "duration": 1783,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('12345');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "2b944122-0019-4054-8cf8-b801c92fcafd",
+                "parentUUID": "23e6d37e-b524-4355-83c7-4e962f482ead",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "1755083e-0188-4563-9b4b-3d7aa0bed18e", "7785bf5f-5938-454b-9349-35be22b47b8f", "59e3d0fd-0692-42d2-8846-4ac08066c61b", "2b944122-0019-4054-8cf8-b801c92fcafd" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 5542,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662227696,
+      "machine": 7099040,
+      "pid": -20244,
+      "increment": 12027140,
+      "creationTime": "2022-09-03T17:54:56Z"
+    },
+    "stats": {
+      "uid": "74ce8e9a-bb52-4114-a69c-79a7659ba3ed",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T15:11:56.872Z",
+      "end": "2022-09-03T15:12:01.574Z",
+      "duration": 4702,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "6c2b8d41-d720-4350-9d15-f060fcc2343f",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "da847284-41eb-405d-b6b1-752ec8f09f47",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1400,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "ae007862-26d8-45c3-a609-445bd6ae525d",
+                "parentUUID": "da847284-41eb-405d-b6b1-752ec8f09f47",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1212,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "fec580d6-6e47-4510-9b14-b6bd9bc5de4e",
+                "parentUUID": "da847284-41eb-405d-b6b1-752ec8f09f47",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "ae007862-26d8-45c3-a609-445bd6ae525d", "fec580d6-6e47-4510-9b14-b6bd9bc5de4e" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2612,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662227857,
+      "machine": 16011207,
+      "pid": -8608,
+      "increment": 4856115,
+      "creationTime": "2022-09-03T17:57:37Z"
+    },
+    "stats": {
+      "uid": "00a3f60a-78f6-4ad4-bc38-bcc7f3f3a330",
+      "suites": 1,
+      "tests": 1,
+      "passes": 1,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T17:56:46.492Z",
+      "end": "2022-09-03T17:57:04.353Z",
+      "duration": 17861,
+      "testsRegistered": 1,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "8bc61b0a-b337-4876-88a2-3ee6b7c2a625",
+        "title": "",
+        "fullFile": "cypress\\e2e\\ambienti.cy.js",
+        "file": "cypress\\e2e\\ambienti.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "e75ddaaf-c067-4831-93a1-a6bf549d4860",
+            "title": "Ambienti Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "list of all VP servers",
+                "fullTitle": "Ambienti Page list of all VP servers",
+                "timedOut": null,
+                "duration": 3249,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Ambienti.aspx');\ncy.get('button[data-target=\".as1alliwpr4774\"').click(); //cy.get('#ctl00_Contentplaceholder_ctl00_GridViewServer_ctl02_lnkLoadAllServer').click();\ncy.get('#ctl00_Contentplaceholder_ctl00_RepeaterCategories_ctl00_lnkLoadAllServer').click();\ncy.get('#myModalDiv > .modal-content > .modal-body > h5').should(\"contain\", \"VERA PROTEZIONE\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "c8fa88e6-52e9-4120-aab3-5778fd5dd42c",
+                "parentUUID": "e75ddaaf-c067-4831-93a1-a6bf549d4860",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "c8fa88e6-52e9-4120-aab3-5778fd5dd42c" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 3249,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662227858,
+      "machine": 7060544,
+      "pid": 3557,
+      "increment": 14949899,
+      "creationTime": "2022-09-03T17:57:38Z"
+    },
+    "stats": {
+      "uid": "00a3f60a-78f6-4ad4-bc38-bcc7f3f3a330",
+      "suites": 1,
+      "tests": 4,
+      "passes": 4,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T17:57:11.594Z",
+      "end": "2022-09-03T17:57:19.748Z",
+      "duration": 8154,
+      "testsRegistered": 4,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "54e2ed8e-9e56-4791-ba5b-3ebda31e845c",
+        "title": "",
+        "fullFile": "cypress\\e2e\\consultazione.cy.js",
+        "file": "cypress\\e2e\\consultazione.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "eec183d0-48e8-40e0-9f17-fbfd7687c0d2",
+            "title": "Consultazione Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "click on Consultazione link",
+                "fullTitle": "Consultazione Page click on Consultazione link",
+                "timedOut": null,
+                "duration": 1273,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('#ctl00_btnReport').click();\ncy.url().should(\"contain\", \"Consultazione.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "a3810951-7b6a-4651-b45f-55e190437ad0",
+                "parentUUID": "eec183d0-48e8-40e0-9f17-fbfd7687c0d2",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search nothing",
+                "fullTitle": "Consultazione Page search nothing",
+                "timedOut": null,
+                "duration": 1207,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Consultazione.aspx');\ncy.get('#ctl00_Contentplaceholder_ddlAmbienteFeweb').select('NESSUNO');\ncy.get('.input-group > .dropdown').click();\ncy.get('span').contains('NESSUNO');\ncy.get('#ctl00_Contentplaceholder_btnCerca').click();\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "60108f68-3896-4add-9a67-81bcbd069293",
+                "parentUUID": "eec183d0-48e8-40e0-9f17-fbfd7687c0d2",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search non existing policy",
+                "fullTitle": "Consultazione Page search non existing policy",
+                "timedOut": null,
+                "duration": 1547,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('987654321');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "cb20501e-b90e-4228-b780-c5347f484f5c",
+                "parentUUID": "eec183d0-48e8-40e0-9f17-fbfd7687c0d2",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search existing policy",
+                "fullTitle": "Consultazione Page search existing policy",
+                "timedOut": null,
+                "duration": 1888,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('12345');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "13ad5c8c-5203-4446-a1ba-b00ac929987c",
+                "parentUUID": "eec183d0-48e8-40e0-9f17-fbfd7687c0d2",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "a3810951-7b6a-4651-b45f-55e190437ad0", "60108f68-3896-4add-9a67-81bcbd069293", "cb20501e-b90e-4228-b780-c5347f484f5c", "13ad5c8c-5203-4446-a1ba-b00ac929987c" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 5915,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662227859,
+      "machine": 8493570,
+      "pid": -27503,
+      "increment": 6981132,
+      "creationTime": "2022-09-03T17:57:39Z"
+    },
+    "stats": {
+      "uid": "00a3f60a-78f6-4ad4-bc38-bcc7f3f3a330",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T17:57:25.889Z",
+      "end": "2022-09-03T17:57:30.716Z",
+      "duration": 4827,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "0aa9f2f4-59d9-442b-b4c3-dcf13ade6b89",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "d0cc762e-8065-472d-b4c3-2dc78f907279",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1456,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "4f3f8415-de14-46bf-9d2a-36c02a161f9e",
+                "parentUUID": "d0cc762e-8065-472d-b4c3-2dc78f907279",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1268,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "54113963-a8f5-42ad-8fae-28a58bd77ac7",
+                "parentUUID": "d0cc762e-8065-472d-b4c3-2dc78f907279",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "4f3f8415-de14-46bf-9d2a-36c02a161f9e", "54113963-a8f5-42ad-8fae-28a58bd77ac7" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2724,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662228324,
+      "machine": 7699103,
+      "pid": 20703,
+      "increment": 6690876,
+      "creationTime": "2022-09-03T18:05:24Z"
+    },
+    "stats": {
+      "uid": "31e4b84f-a48f-46d4-a7de-a398f69b55ca",
+      "suites": 1,
+      "tests": 1,
+      "passes": 1,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T18:04:34.469Z",
+      "end": "2022-09-03T18:04:50.761Z",
+      "duration": 16292,
+      "testsRegistered": 1,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "e4711cff-6391-4729-a786-52bc406d931c",
+        "title": "",
+        "fullFile": "cypress\\e2e\\ambienti.cy.js",
+        "file": "cypress\\e2e\\ambienti.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "788cf4a3-2e3e-4fee-a59e-07956c0fb8e0",
+            "title": "Ambienti Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "list of all VP servers",
+                "fullTitle": "Ambienti Page list of all VP servers",
+                "timedOut": null,
+                "duration": 3601,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Ambienti.aspx');\ncy.get('button[data-target=\".as1alliwpr4774\"').click(); //cy.get('#ctl00_Contentplaceholder_ctl00_GridViewServer_ctl02_lnkLoadAllServer').click();\ncy.get('#ctl00_Contentplaceholder_ctl00_RepeaterCategories_ctl00_lnkLoadAllServer').click();\ncy.get('#myModalDiv > .modal-content > .modal-body > h5').should(\"contain\", \"VERA PROTEZIONE\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "e59f997c-879b-42fe-901c-a6d11aae171a",
+                "parentUUID": "788cf4a3-2e3e-4fee-a59e-07956c0fb8e0",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "e59f997c-879b-42fe-901c-a6d11aae171a" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 3601,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662228325,
+      "machine": 4132769,
+      "pid": 10187,
+      "increment": 8308662,
+      "creationTime": "2022-09-03T18:05:25Z"
+    },
+    "stats": {
+      "uid": "31e4b84f-a48f-46d4-a7de-a398f69b55ca",
+      "suites": 1,
+      "tests": 4,
+      "passes": 4,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T18:04:57.868Z",
+      "end": "2022-09-03T18:05:06.125Z",
+      "duration": 8257,
+      "testsRegistered": 4,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "b8f30991-c936-4bdd-9083-bc0f5953ab15",
+        "title": "",
+        "fullFile": "cypress\\e2e\\consultazione.cy.js",
+        "file": "cypress\\e2e\\consultazione.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "903fa00b-71f8-4fc3-bacf-9ebc899cf5b1",
+            "title": "Consultazione Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "click on Consultazione link",
+                "fullTitle": "Consultazione Page click on Consultazione link",
+                "timedOut": null,
+                "duration": 1273,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('#ctl00_btnReport').click();\ncy.url().should(\"contain\", \"Consultazione.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "e28a4e38-87a1-4f56-a6d5-10f2764f8aaf",
+                "parentUUID": "903fa00b-71f8-4fc3-bacf-9ebc899cf5b1",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search nothing",
+                "fullTitle": "Consultazione Page search nothing",
+                "timedOut": null,
+                "duration": 1222,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Consultazione.aspx');\ncy.get('#ctl00_Contentplaceholder_ddlAmbienteFeweb').select('NESSUNO');\ncy.get('.input-group > .dropdown').click();\ncy.get('span').contains('NESSUNO');\ncy.get('#ctl00_Contentplaceholder_btnCerca').click();\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "8de4886e-a8f6-44bf-a55a-f1028807cb05",
+                "parentUUID": "903fa00b-71f8-4fc3-bacf-9ebc899cf5b1",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search non existing policy",
+                "fullTitle": "Consultazione Page search non existing policy",
+                "timedOut": null,
+                "duration": 1642,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('987654321');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "ff71878e-6df1-4a65-ba15-b14289396454",
+                "parentUUID": "903fa00b-71f8-4fc3-bacf-9ebc899cf5b1",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search existing policy",
+                "fullTitle": "Consultazione Page search existing policy",
+                "timedOut": null,
+                "duration": 1887,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('12345');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "60766370-3de7-42b4-850c-a45bb1df7e7b",
+                "parentUUID": "903fa00b-71f8-4fc3-bacf-9ebc899cf5b1",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "e28a4e38-87a1-4f56-a6d5-10f2764f8aaf", "8de4886e-a8f6-44bf-a55a-f1028807cb05", "ff71878e-6df1-4a65-ba15-b14289396454", "60766370-3de7-42b4-850c-a45bb1df7e7b" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 6024,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662228326,
+      "machine": 626435,
+      "pid": 24386,
+      "increment": 3324481,
+      "creationTime": "2022-09-03T18:05:26Z"
+    },
+    "stats": {
+      "uid": "31e4b84f-a48f-46d4-a7de-a398f69b55ca",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T18:05:12.639Z",
+      "end": "2022-09-03T18:05:17.519Z",
+      "duration": 4880,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "3c70a49e-3775-4b27-be57-fa162e314175",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "23a0bf90-7d30-4dd3-900e-95024587ae68",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1490,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "fb850747-f0e0-479e-a237-1225fad7b5db",
+                "parentUUID": "23a0bf90-7d30-4dd3-900e-95024587ae68",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1244,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "d9eb67d4-5b7e-41d6-995e-797446d5002d",
+                "parentUUID": "23a0bf90-7d30-4dd3-900e-95024587ae68",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "fb850747-f0e0-479e-a237-1225fad7b5db", "d9eb67d4-5b7e-41d6-995e-797446d5002d" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2734,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232024,
+      "machine": 876569,
+      "pid": -18186,
+      "increment": 12596808,
+      "creationTime": "2022-09-03T19:07:04Z"
+    },
+    "stats": {
+      "uid": "a3d334ad-3ec5-4972-a8ee-e5f84e5569e2",
+      "suites": 1,
+      "tests": 1,
+      "passes": 1,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:05:58.832Z",
+      "end": "2022-09-03T19:06:20.903Z",
+      "duration": 22071,
+      "testsRegistered": 1,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "44d73708-ec8f-4628-ace0-18eeb16bf4f6",
+        "title": "",
+        "fullFile": "cypress\\e2e\\ambienti.cy.js",
+        "file": "cypress\\e2e\\ambienti.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "4bf02096-947c-49a3-a604-b49830ad5f65",
+            "title": "Ambienti Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "list of all VP servers",
+                "fullTitle": "Ambienti Page list of all VP servers",
+                "timedOut": null,
+                "duration": 3823,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Ambienti.aspx');\ncy.get('button[data-target=\".as1alliwpr4774\"').click(); //cy.get('#ctl00_Contentplaceholder_ctl00_GridViewServer_ctl02_lnkLoadAllServer').click();\ncy.get('#ctl00_Contentplaceholder_ctl00_RepeaterCategories_ctl00_lnkLoadAllServer').click();\ncy.get('#myModalDiv > .modal-content > .modal-body > h5').should(\"contain\", \"VERA PROTEZIONE\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "e7660745-3413-479f-b3c5-df20dc55fc71",
+                "parentUUID": "4bf02096-947c-49a3-a604-b49830ad5f65",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "e7660745-3413-479f-b3c5-df20dc55fc71" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 3823,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232025,
+      "machine": 8195832,
+      "pid": 9451,
+      "increment": 11013855,
+      "creationTime": "2022-09-03T19:07:05Z"
+    },
+    "stats": {
+      "uid": "a3d334ad-3ec5-4972-a8ee-e5f84e5569e2",
+      "suites": 1,
+      "tests": 4,
+      "passes": 4,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:06:31.007Z",
+      "end": "2022-09-03T19:06:41.188Z",
+      "duration": 10181,
+      "testsRegistered": 4,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "3cfe60ff-4f8c-41c2-92d3-272ffdcfd5f5",
+        "title": "",
+        "fullFile": "cypress\\e2e\\consultazione.cy.js",
+        "file": "cypress\\e2e\\consultazione.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "7136f3a0-c673-4252-97de-45df3f49b19b",
+            "title": "Consultazione Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "click on Consultazione link",
+                "fullTitle": "Consultazione Page click on Consultazione link",
+                "timedOut": null,
+                "duration": 1537,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('#ctl00_btnReport').click();\ncy.url().should(\"contain\", \"Consultazione.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "d1eea28f-aaca-4c07-9dcf-6c48634b6568",
+                "parentUUID": "7136f3a0-c673-4252-97de-45df3f49b19b",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search nothing",
+                "fullTitle": "Consultazione Page search nothing",
+                "timedOut": null,
+                "duration": 1683,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Consultazione.aspx');\ncy.get('#ctl00_Contentplaceholder_ddlAmbienteFeweb').select('NESSUNO');\ncy.get('.input-group > .dropdown').click();\ncy.get('span').contains('NESSUNO');\ncy.get('#ctl00_Contentplaceholder_btnCerca').click();\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "d6a0dfaa-edec-4481-a0d5-74a93f316eb0",
+                "parentUUID": "7136f3a0-c673-4252-97de-45df3f49b19b",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search non existing policy",
+                "fullTitle": "Consultazione Page search non existing policy",
+                "timedOut": null,
+                "duration": 2089,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('987654321');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "7d20950a-232a-40f7-b56e-7603701949c9",
+                "parentUUID": "7136f3a0-c673-4252-97de-45df3f49b19b",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search existing policy",
+                "fullTitle": "Consultazione Page search existing policy",
+                "timedOut": null,
+                "duration": 1967,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('12345');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "a193eb37-7faf-4dc4-8aa3-f816b25cc743",
+                "parentUUID": "7136f3a0-c673-4252-97de-45df3f49b19b",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "d1eea28f-aaca-4c07-9dcf-6c48634b6568", "d6a0dfaa-edec-4481-a0d5-74a93f316eb0", "7d20950a-232a-40f7-b56e-7603701949c9", "a193eb37-7faf-4dc4-8aa3-f816b25cc743" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 7276,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232026,
+      "machine": 3460873,
+      "pid": 21625,
+      "increment": 3037724,
+      "creationTime": "2022-09-03T19:07:06Z"
+    },
+    "stats": {
+      "uid": "a3d334ad-3ec5-4972-a8ee-e5f84e5569e2",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:06:49.68Z",
+      "end": "2022-09-03T19:06:55.62Z",
+      "duration": 5940,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "094da3a2-0a12-42a1-baa2-c3f7b4ac45d7",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "d49bc605-966e-4777-b4d3-fb364be60870",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1800,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "edea7dbd-e0c1-481b-a9f5-14e3f560faa1",
+                "parentUUID": "d49bc605-966e-4777-b4d3-fb364be60870",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1505,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "fff2fa12-0d54-435d-b109-a84f24dbc830",
+                "parentUUID": "d49bc605-966e-4777-b4d3-fb364be60870",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "edea7dbd-e0c1-481b-a9f5-14e3f560faa1", "fff2fa12-0d54-435d-b109-a84f24dbc830" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 3305,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232212,
+      "machine": 6831779,
+      "pid": -24196,
+      "increment": 13537934,
+      "creationTime": "2022-09-03T19:10:12Z"
+    },
+    "stats": {
+      "uid": "3853da59-7127-4b2e-af18-ab1defa02d57",
+      "suites": 1,
+      "tests": 1,
+      "passes": 1,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:09:16.54Z",
+      "end": "2022-09-03T19:09:33.118Z",
+      "duration": 16578,
+      "testsRegistered": 1,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "61c1bf55-22db-4b6e-ae21-6bae21d49f1f",
+        "title": "",
+        "fullFile": "cypress\\e2e\\ambienti.cy.js",
+        "file": "cypress\\e2e\\ambienti.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "416c92d8-ec02-47b2-9f00-5f1f5ee823d4",
+            "title": "Ambienti Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "list of all VP servers",
+                "fullTitle": "Ambienti Page list of all VP servers",
+                "timedOut": null,
+                "duration": 3513,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Ambienti.aspx');\ncy.get('button[data-target=\".as1alliwpr4774\"').click(); //cy.get('#ctl00_Contentplaceholder_ctl00_GridViewServer_ctl02_lnkLoadAllServer').click();\ncy.get('#ctl00_Contentplaceholder_ctl00_RepeaterCategories_ctl00_lnkLoadAllServer').click();\ncy.get('#myModalDiv > .modal-content > .modal-body > h5').should(\"contain\", \"VERA PROTEZIONE\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "60817b2e-1605-4726-8dad-c1494ad50cc6",
+                "parentUUID": "416c92d8-ec02-47b2-9f00-5f1f5ee823d4",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "60817b2e-1605-4726-8dad-c1494ad50cc6" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 3513,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232212,
+      "machine": 4924428,
+      "pid": 15201,
+      "increment": 9862762,
+      "creationTime": "2022-09-03T19:10:12Z"
+    },
+    "stats": {
+      "uid": "3853da59-7127-4b2e-af18-ab1defa02d57",
+      "suites": 1,
+      "tests": 4,
+      "passes": 4,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:09:41.927Z",
+      "end": "2022-09-03T19:09:51.494Z",
+      "duration": 9567,
+      "testsRegistered": 4,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "d9cf9837-2ced-4b9f-9288-7ad6a45cae03",
+        "title": "",
+        "fullFile": "cypress\\e2e\\consultazione.cy.js",
+        "file": "cypress\\e2e\\consultazione.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "b477ece8-b573-4f95-81a7-de3e767567ca",
+            "title": "Consultazione Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "click on Consultazione link",
+                "fullTitle": "Consultazione Page click on Consultazione link",
+                "timedOut": null,
+                "duration": 1559,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('#ctl00_btnReport').click();\ncy.url().should(\"contain\", \"Consultazione.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "9fe5456a-c539-43d1-affe-5060030dcd0a",
+                "parentUUID": "b477ece8-b573-4f95-81a7-de3e767567ca",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search nothing",
+                "fullTitle": "Consultazione Page search nothing",
+                "timedOut": null,
+                "duration": 1433,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Consultazione.aspx');\ncy.get('#ctl00_Contentplaceholder_ddlAmbienteFeweb').select('NESSUNO');\ncy.get('.input-group > .dropdown').click();\ncy.get('span').contains('NESSUNO');\ncy.get('#ctl00_Contentplaceholder_btnCerca').click();\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "c2996808-8e89-4d37-89b6-c5e58192ee3c",
+                "parentUUID": "b477ece8-b573-4f95-81a7-de3e767567ca",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search non existing policy",
+                "fullTitle": "Consultazione Page search non existing policy",
+                "timedOut": null,
+                "duration": 1812,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('987654321');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "b4a417b6-b83e-4012-b603-456923d01c60",
+                "parentUUID": "b477ece8-b573-4f95-81a7-de3e767567ca",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search existing policy",
+                "fullTitle": "Consultazione Page search existing policy",
+                "timedOut": null,
+                "duration": 2044,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('12345');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "38ebf139-ecf6-4cb7-ba6b-221c7699aab2",
+                "parentUUID": "b477ece8-b573-4f95-81a7-de3e767567ca",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "9fe5456a-c539-43d1-affe-5060030dcd0a", "c2996808-8e89-4d37-89b6-c5e58192ee3c", "b4a417b6-b83e-4012-b603-456923d01c60", "38ebf139-ecf6-4cb7-ba6b-221c7699aab2" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 6848,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232213,
+      "machine": 13870049,
+      "pid": 20091,
+      "increment": 4992962,
+      "creationTime": "2022-09-03T19:10:13Z"
+    },
+    "stats": {
+      "uid": "3853da59-7127-4b2e-af18-ab1defa02d57",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:09:58.992Z",
+      "end": "2022-09-03T19:10:04.622Z",
+      "duration": 5630,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "d38b8a2e-c665-4770-923d-6adc65d4dac3",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "e2b3e89c-593d-467a-8076-c2a413098a82",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1631,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "cabf26e3-d98a-4e17-828e-8ccbef31d326",
+                "parentUUID": "e2b3e89c-593d-467a-8076-c2a413098a82",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1277,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "3868c9c9-7d99-4c67-8bf6-4d2ca87ddba1",
+                "parentUUID": "e2b3e89c-593d-467a-8076-c2a413098a82",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "cabf26e3-d98a-4e17-828e-8ccbef31d326", "3868c9c9-7d99-4c67-8bf6-4d2ca87ddba1" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2908,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232671,
+      "machine": 6202555,
+      "pid": -9879,
+      "increment": 5994505,
+      "creationTime": "2022-09-03T19:17:51Z"
+    },
+    "stats": {
+      "uid": "5cd7509b-3c1b-499c-b2aa-8a3007622090",
+      "suites": 1,
+      "tests": 1,
+      "passes": 1,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:16:57.546Z",
+      "end": "2022-09-03T19:17:15.544Z",
+      "duration": 17998,
+      "testsRegistered": 1,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "b1544618-88c8-41b9-bc07-1e0f712e44e9",
+        "title": "",
+        "fullFile": "cypress\\e2e\\ambienti.cy.js",
+        "file": "cypress\\e2e\\ambienti.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "b7ccdf9a-4412-40bd-a435-299518690906",
+            "title": "Ambienti Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "list of all VP servers",
+                "fullTitle": "Ambienti Page list of all VP servers",
+                "timedOut": null,
+                "duration": 3354,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Ambienti.aspx');\ncy.get('button[data-target=\".as1alliwpr4774\"').click(); //cy.get('#ctl00_Contentplaceholder_ctl00_GridViewServer_ctl02_lnkLoadAllServer').click();\ncy.get('#ctl00_Contentplaceholder_ctl00_RepeaterCategories_ctl00_lnkLoadAllServer').click();\ncy.get('#myModalDiv > .modal-content > .modal-body > h5').should(\"contain\", \"VERA PROTEZIONE\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "a49725c8-4620-4721-8a19-563fe41e1363",
+                "parentUUID": "b7ccdf9a-4412-40bd-a435-299518690906",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "a49725c8-4620-4721-8a19-563fe41e1363" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 3354,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232672,
+      "machine": 11334249,
+      "pid": 26280,
+      "increment": 1289082,
+      "creationTime": "2022-09-03T19:17:52Z"
+    },
+    "stats": {
+      "uid": "5cd7509b-3c1b-499c-b2aa-8a3007622090",
+      "suites": 1,
+      "tests": 4,
+      "passes": 4,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:17:23.68Z",
+      "end": "2022-09-03T19:17:32.164Z",
+      "duration": 8484,
+      "testsRegistered": 4,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "0e86618d-7fbd-456a-937c-7c9113f01851",
+        "title": "",
+        "fullFile": "cypress\\e2e\\consultazione.cy.js",
+        "file": "cypress\\e2e\\consultazione.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "fd064c99-3a4f-47c2-8234-98b75dc78295",
+            "title": "Consultazione Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "click on Consultazione link",
+                "fullTitle": "Consultazione Page click on Consultazione link",
+                "timedOut": null,
+                "duration": 1241,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('#ctl00_btnReport').click();\ncy.url().should(\"contain\", \"Consultazione.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "dc5dd703-7ddf-4ea4-97d6-7d48c28268fb",
+                "parentUUID": "fd064c99-3a4f-47c2-8234-98b75dc78295",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search nothing",
+                "fullTitle": "Consultazione Page search nothing",
+                "timedOut": null,
+                "duration": 1275,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool/Consultazione.aspx');\ncy.get('#ctl00_Contentplaceholder_ddlAmbienteFeweb').select('NESSUNO');\ncy.get('.input-group > .dropdown').click();\ncy.get('span').contains('NESSUNO');\ncy.get('#ctl00_Contentplaceholder_btnCerca').click();\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "1f95642f-f9b8-4502-9055-d0fdb82353c8",
+                "parentUUID": "fd064c99-3a4f-47c2-8234-98b75dc78295",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search non existing policy",
+                "fullTitle": "Consultazione Page search non existing policy",
+                "timedOut": null,
+                "duration": 1621,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('987654321');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"not.exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "e3156f51-f21c-4b0c-ba5e-8b9bdb51ee5d",
+                "parentUUID": "fd064c99-3a4f-47c2-8234-98b75dc78295",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "search existing policy",
+                "fullTitle": "Consultazione Page search existing policy",
+                "timedOut": null,
+                "duration": 1697,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "searchPolicyNumber('12345');\ncy.get('#ctl00_Contentplaceholder_GridViewRisultato').should(\"exist\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "a6cb81e2-b9a8-4fd1-a8dd-9f0a36558543",
+                "parentUUID": "fd064c99-3a4f-47c2-8234-98b75dc78295",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "dc5dd703-7ddf-4ea4-97d6-7d48c28268fb", "1f95642f-f9b8-4502-9055-d0fdb82353c8", "e3156f51-f21c-4b0c-ba5e-8b9bdb51ee5d", "a6cb81e2-b9a8-4fd1-a8dd-9f0a36558543" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 5834,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  },
+  {
+    "_id": {
+      "timestamp": 1662232673,
+      "machine": 1812855,
+      "pid": 4401,
+      "increment": 12861733,
+      "creationTime": "2022-09-03T19:17:53Z"
+    },
+    "stats": {
+      "uid": "5cd7509b-3c1b-499c-b2aa-8a3007622090",
+      "suites": 1,
+      "tests": 2,
+      "passes": 2,
+      "pending": 0,
+      "failures": 0,
+      "start": "2022-09-03T19:17:38.717Z",
+      "end": "2022-09-03T19:17:43.626Z",
+      "duration": 4909,
+      "testsRegistered": 2,
+      "passPercent": 100,
+      "pendingPercent": 0,
+      "other": 0,
+      "hasOther": false,
+      "skipped": 0,
+      "hasSkipped": false
+    },
+    "results": [
+      {
+        "uuid": "e27749a3-48f9-431d-8e7c-06096fb7a861",
+        "title": "",
+        "fullFile": "cypress\\e2e\\login.cy.js",
+        "file": "cypress\\e2e\\login.cy.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "8a38a0d6-4019-418f-9a02-cc6a615f4ebb",
+            "title": "Login Page",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "login with wrong user and password",
+                "fullTitle": "Login Page login with wrong user and password",
+                "timedOut": null,
+                "duration": 1543,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('a');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('b');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click(); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('[data-layer=\"Content\"]').should(\"be.equal\", \"The user name or password is incorrect.\");\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"exist\");\ncy.url().should(\"contain\", \"Login.aspx\"); //cy.get('#ctl00_Contentplaceholder_spanError').should(\"be.equal\", \"The user name or password is incorrect.\");\n//cy.get('span').should(\"be.equal\", \"The user name or password is incorrect.\");",
+                "err": {},
+                "uuid": "e74a6f04-2d59-4e5f-8a01-2953158093e7",
+                "parentUUID": "8a38a0d6-4019-418f-9a02-cc6a615f4ebb",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "login with correct user and password",
+                "fullTitle": "Login Page login with correct user and password",
+                "timedOut": null,
+                "duration": 1123,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "context": null,
+                "code": "cy.visit('http://localhost/VitaPowerTool');\ncy.get('[name=\"ctl00$Contentplaceholder$uname1\"]').first().type('smartscript');\ncy.get('[name=\"ctl00$Contentplaceholder$pwd1\"]').first().type('smartscript');\ncy.get('[id=\"ctl00_Contentplaceholder_btnLogin\"]').click();\ncy.get('#ctl00_Contentplaceholder_spanErrorDiv').should(\"not.exist\");\ncy.url().should(\"contain\", \"default.aspx\");",
+                "err": {},
+                "uuid": "ab23a717-64d3-402e-914f-584013812df4",
+                "parentUUID": "8a38a0d6-4019-418f-9a02-cc6a615f4ebb",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [ "e74a6f04-2d59-4e5f-8a01-2953158093e7", "ab23a717-64d3-402e-914f-584013812df4" ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 2666,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": true,
+        "rootEmpty": true,
+        "_timeout": 2000
+      }
+    ],
+    "meta": {
+      "mocha": { "version": "7.0.1" },
+      "mochawesome": {
+        "options": {
+          "quiet": false,
+          "reportFilename": "mochawesome",
+          "saveHtml": false,
+          "saveJson": true,
+          "consoleReporter": "spec",
+          "useInlineDiffs": false,
+          "code": true,
+          "charts": null,
+          "overwrite": null,
+          "html": null,
+          "json": null,
+          "reportDir": null
+        },
+        "version": "7.1.3"
+      },
+      "marge": {
+        "options": {
+          "quiet": null,
+          "reportFilename": null,
+          "saveHtml": null,
+          "saveJson": null,
+          "consoleReporter": null,
+          "useInlineDiffs": null,
+          "code": null,
+          "charts": true,
+          "overwrite": false,
+          "html": false,
+          "json": true,
+          "reportDir": "cypress/report/mochawesome-report"
+        },
+        "version": "6.2.0"
+      }
+    }
+  }
+]
