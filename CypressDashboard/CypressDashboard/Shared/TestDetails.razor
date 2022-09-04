@@ -4,26 +4,28 @@
 	// Demonstrates how a parent component can supply parameters
 	[Parameter]
 	public CypressDashboardModel.CypressTestSummary? Summary { get; set; }
+	[Parameter]
+	public CypressDashboardModel.CypressTest[]? TestList { get; set; }
 
 	class DataItem
 	{
-		public string ?Title { get; set; }
+		public string? Title { get; set; }
 		public int Result { get; set; }
 	}
 
-	DataItem[] ?testSummary;
+	DataItem[]? testSummary;
 }
 
 @if (Summary == null)
 {
-		<p>Loading...</p>
+			<p>Loading...</p>
 }
 else
 {
 
-	
+
 	{
-	testSummary = new DataItem[] {
+		testSummary = new DataItem[] {
 			new DataItem
 			{
 			Title = "Tests Passed",
@@ -36,27 +38,54 @@ else
 			}
 			};
 	}
-		<h1>@Summary.startTime</h1>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-lg-6 my-5">
+			<h1>@Summary.startTime</h1>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-lg-6 my-5">
 
-					<RadzenChart ColorScheme="ColorScheme.Pastel">
-						<RadzenDonutSeries Fills=@(new [] { "#45ff71", "#ff3344" }) Data="@testSummary" CategoryProperty="Title" ValueProperty="Result"  >
+						<RadzenChart ColorScheme="ColorScheme.Pastel">
+							<RadzenDonutSeries Fills=@(new [] { "#45ff71", "#ff3344" }) Data="@testSummary" CategoryProperty="Title" ValueProperty="Result"  >
+
+								<TitleTemplate>
+									<div class="rz-donut-content">
+										<div>@((Summary.nTestsPassed*100)/Summary.nTests)%</div> 
+
+									</div>
+								</TitleTemplate>
+
+							</RadzenDonutSeries>
+						</RadzenChart>
+					</div>
+
+					<div class="col-sm-12 col-lg-6 my-5">
+
 						
-							<TitleTemplate>
-								<div class="rz-donut-content">
-									<div>@((Summary.nTestsPassed*100)/Summary.nTests)%</div> 
+						
+								 <RadzenCard>
+								<h4>@Summary._id</h4>
+								<RadzenAccordion Multiple="true">
+									<Items>
+									@foreach (var singletest in TestList)
+									{@foreach (var result in singletest.results)
+										{
+										<RadzenAccordionItem Text="@(result.fullFile + " (" + singletest.stats.passes + "/" + singletest.stats.tests+ ")" )" Icon="done" style="font-color:green;">
+											@foreach (var result in singletest.results)
+											foreach (var suite in result.suites)
+											foreach (var test in suite.tests)
+										{
+											<p>@test.title</p>
+										}
 
-								</div>
-							</TitleTemplate>
-
-						</RadzenDonutSeries>
-					</RadzenChart>
+										</RadzenAccordionItem>
+										}}
+									</Items>
+								</RadzenAccordion>
+							</RadzenCard>
+							
+						
+					</div>
 				</div>
-				
 			</div>
-		</div>
 }
 
 

@@ -12,12 +12,12 @@
 @code {
 
 
-
+    CypressTest[] testList = new CypressTest[0];
 	CypressTestSummary[] summary = new CypressTestSummary[0];
 	protected override async Task OnInitializedAsync()
 	{
 		//var test = await Http.GetFromJsonAsync<CypressTest[]>("https://localhost:5001/getsomething");
-		//CypressTest[] testList = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata1.json");      
+		testList = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata2.json");      
 
 		//currentCount = testList.Length;
 
@@ -54,3 +54,10 @@
                     </div>
                 </div>
             </RadzenCard>
+
+
+            @if (summary.Length>0)
+            {
+                <TestDetails Summary="summary[0]" TestList="testList"></TestDetails>
+            }
+            
