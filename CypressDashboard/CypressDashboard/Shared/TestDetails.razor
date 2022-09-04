@@ -1,0 +1,62 @@
+﻿
+
+@code {
+	// Demonstrates how a parent component can supply parameters
+	[Parameter]
+	public CypressDashboardModel.CypressTestSummary? Summary { get; set; }
+
+	class DataItem
+	{
+		public string ?Title { get; set; }
+		public int Result { get; set; }
+	}
+
+	DataItem[] ?testSummary;
+}
+
+@if (Summary == null)
+{
+		<p>Loading...</p>
+}
+else
+{
+
+	
+	{
+	testSummary = new DataItem[] {
+			new DataItem
+			{
+			Title = "Tests Passed",
+			Result = Summary.nTestsPassed
+			},
+			new DataItem
+			{
+			Title = "Tests Failed",
+			Result = Summary.nTestsFailed
+			}
+			};
+	}
+		<h1>@Summary.startTime</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-lg-6 my-5">
+
+					<RadzenChart ColorScheme="ColorScheme.Pastel">
+						<RadzenDonutSeries Fills=@(new [] { "#45ff71", "#ff3344" }) Data="@testSummary" CategoryProperty="Title" ValueProperty="Result"  >
+						
+							<TitleTemplate>
+								<div class="rz-donut-content">
+									<div>@((Summary.nTestsPassed*100)/Summary.nTests)%</div> 
+
+								</div>
+							</TitleTemplate>
+
+						</RadzenDonutSeries>
+					</RadzenChart>
+				</div>
+				
+			</div>
+		</div>
+}
+
+

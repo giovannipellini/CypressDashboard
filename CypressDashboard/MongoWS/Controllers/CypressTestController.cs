@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using CypressDashboardModel;
+using CypressDashboard;
 
 namespace MongoWS.Controllers
 {
@@ -17,16 +19,16 @@ namespace MongoWS.Controllers
 
        
         [HttpGet("~/getsomething")]
-        public IEnumerable<CypressDashboard.CypressTest> Get(int nCountMax)
+        public IEnumerable<CypressTest> Get(int nCountMax)
 		{
-			CypressDashboard.MongoDBAdapter adapter = new CypressDashboard.MongoDBAdapter();
+			MongoDBAdapter adapter = new MongoDBAdapter();
 			return adapter.GetLastTests(nCountMax);
 		}
 
         [HttpGet("~/getothersomething")]
-        public IEnumerable<CypressDashboard.CypressTest> GetOtherTests()
+        public IEnumerable<CypressTest> GetOtherTests()
         {
-            CypressDashboard.MongoDBAdapter adapter = new CypressDashboard.MongoDBAdapter();
+            MongoDBAdapter adapter = new MongoDBAdapter();
             return adapter.GetLastTests(1);
         }
 

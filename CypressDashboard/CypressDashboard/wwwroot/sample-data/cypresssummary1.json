@@ -1,0 +1,29 @@
+﻿[
+  {
+    "_id": "5cd7509b-3c1b-499c-b2aa-8a3007622090",
+    "totalDuration": 31391,
+    "startTime": "2022-09-03T19:16:57.546Z",
+    "endTime": "2022-09-03T19:17:43.626Z",
+    "nTests": 7,
+    "nTestsPassed": 7,
+    "nTestsFailed": 0
+  },
+  {
+    "_id": "5cd7509b-3c1b-3c1b-b2aa-8a3007622090",
+    "totalDuration": 131391,
+    "startTime": "2022-08-03T19:16:57.546Z",
+    "endTime": "2022-08-03T19:17:43.626Z",
+    "nTests": 27,
+    "nTestsPassed": 7,
+    "nTestsFailed": 20
+  },
+  {
+    "_id": "5cd7509b-b2aa-499c-b2aa-8a3007622090",
+    "totalDuration": 391,
+    "startTime": "2022-07-03T19:16:57.546Z",
+    "endTime": "2022-07-03T19:17:43.626Z",
+    "nTests": 27,
+    "nTestsPassed": 20,
+    "nTestsFailed": 7
+  }
+]

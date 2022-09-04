@@ -1,111 +1,56 @@
 ﻿@page "/"
 @inject HttpClient Http
+@using CypressDashboardModel
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<RadzenButton Text="@text"></RadzenButton>
-@code {
-    string text = "Ciao";
-
-    protected override async Task OnInitializedAsync()
-    {
-        var test = await Http.GetFromJsonAsync<CypressTest[]>("https://localhost:5001/getsomething");
-        currentCount = test.Length;
-    }
-
-}
+<h1>Cypress Dashboard</h1>
 
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
-<h1>Radzen Blazor Chart donut series</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-6 offset-lg-3 my-5">
-
-                <RadzenChart ColorScheme="ColorScheme.Pastel">
-                    <RadzenDonutSeries Data="@revenue" CategoryProperty="Quarter" ValueProperty="Revenue"  >
-                       @* <ChildContent>
-                            <RadzenSeriesDataLabels Visible="@showDataLabels" />
-                        </ChildContent>*@
-                        <TitleTemplate>
-                            <div class="rz-donut-content">
-                                <div>Revenue</div> 
-                                <div>for 2020</div>
-                            </div>
-                        </TitleTemplate>
-                        
-                    </RadzenDonutSeries>
-                </RadzenChart>
-            </div>
-        </div>
-    </div>
-
-    
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 @code {
-    bool showDataLabels = false;
-    static int currentCount = 20000;
 
-    private void IncrementCount()
-    {
-        currentCount+=10000;
-        revenue = new DataItem[] {
-    new DataItem
-    {
-    Quarter = "Q1",
-    Revenue = currentCount
-    },
-    new DataItem
-    {
-    Quarter = "Q2",
-    Revenue = 40000
-    },
-    new DataItem
-    {
-    Quarter = "Q3",
-    Revenue = 50000
-    },
-    new DataItem
-    {
-    Quarter = "Q4",
-    Revenue = 80000
-    },
-    };
-    }
-    class DataItem
-    {
-        public string Quarter { get; set; }
-        public double Revenue { get; set; }
+
+
+	CypressTestSummary[] summary = new CypressTestSummary[0];
+	protected override async Task OnInitializedAsync()
+	{
+		//var test = await Http.GetFromJsonAsync<CypressTest[]>("https://localhost:5001/getsomething");
+		//CypressTest[] testList = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata1.json");      
+
+		//currentCount = testList.Length;
+
+
+		summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("sample-data/cypresssummary1.json");
+
+
+	}
+
+   
+      
+
     }
 
-    DataItem[] revenue = new DataItem[] {
-    new DataItem
-    {
-    Quarter = "Q1",
-    Revenue = currentCount
-    },
-    new DataItem
-    {
-    Quarter = "Q2",
-    Revenue = 40000
-    },
-    new DataItem
-    {
-    Quarter = "Q3",
-    Revenue = 50000
-    },
-    new DataItem
-    {
-    Quarter = "Q4",
-    Revenue = 80000
-    },
-    };
-}
 
 
+
+
+                @foreach (var item in summary)
+                {
+                    <TestSummary Summary="item"></TestSummary>
+                }
+            
+
+ <RadzenCard class="m-3" style="border-left: .25rem solid #4e73df!important">
+                <h3 class="h5">Contact</h3>
+                <div class="d-flex flex-row">
+
+                    <div>
+                        <div>Employee</div>
+                        <b>ciao</b>
+                        <div class="mt-3">Company</div>
+                        <b>a tutti</b>
+                    </div>
+                </div>
+            </RadzenCard>

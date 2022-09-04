@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Driver;
-
+using CypressDashboardModel;
 
 namespace CypressDashboard
 {
     public class MongoDBAdapter
     {
         IMongoCollection<CypressTest> testCollection;
+        IMongoCollection<CypressTestSummary> testSummaryCollection;
 
         public MongoDBAdapter()
         {
@@ -20,7 +22,7 @@ namespace CypressDashboard
             var db = client.GetDatabase("Cypress");
 
             testCollection = db.GetCollection<CypressTest>("Tests");
-            
+            testSummaryCollection = db.GetCollection<CypressTestSummary>("TestSummary");
         }
         /// <summary>
         /// Returns the last nCountMax tests from the DB
@@ -29,12 +31,15 @@ namespace CypressDashboard
         /// <returns></returns>
         public List<CypressTest> GetLastTests(int nCountMax)
         {
-            var test = testCollection.Find(FilterDefinition<CypressTest>.Empty).SortBy(field: x => x.stats.start).Limit(nCountMax).ToList();
-            return test;
+            return testCollection.Find(FilterDefinition<CypressTest>.Empty).SortBy(field: x => x.stats.start).Limit(nCountMax).ToList();
         }
 
+        public List<CypressTestSummary> GetLatestRuns(int nCountMax)
+        {
 
-        //Console.WriteLine(test.Count);
+            return testSummaryCollection.Find(FilterDefinition<CypressTestSummary>.Empty).Limit(nCountMax).ToList();
+
+        }
 
 
     }
