@@ -11,8 +11,11 @@ namespace CypressDashboardModel
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Err
     {
+        public string? message { get; set; }
+        public string? estack { get; set; }
+        public object? diff { get; set; }
     }
-  
+
     public class Id
     {
         [JsonProperty("$oid")]
@@ -65,14 +68,14 @@ namespace CypressDashboardModel
         public string? title { get; set; }
         public string? fullFile { get; set; }
         public string? file { get; set; }
-        public List<object>?  beforeHooks { get; set; }
-        public List<object>?  afterHooks { get; set; }
-        public List<object>?  tests { get; set; }
+        public List<object>? beforeHooks { get; set; }
+        public List<object>? afterHooks { get; set; }
+        public List<object>? tests { get; set; }
         public List<Suite>? suites { get; set; }
-        public List<object>?  passes { get; set; }
-        public List<object>?  failures { get; set; }
-        public List<object>?  pending { get; set; }
-        public List<object>?  skipped { get; set; }
+        public List<object>? passes { get; set; }
+        public List<object>? failures { get; set; }
+        public List<object>? pending { get; set; }
+        public List<object>? skipped { get; set; }
         public int? duration { get; set; }
         public bool? root { get; set; }
         public bool? rootEmpty { get; set; }
@@ -81,7 +84,7 @@ namespace CypressDashboardModel
 
     public class CypressTest
     {
-        
+
         public MongoDB.Bson.ObjectId _id { get; set; }
         public Stats? stats { get; set; }
         public List<Result>? results { get; set; }
@@ -100,8 +103,8 @@ namespace CypressDashboardModel
         public DateTime end { get; set; }
         public int? duration { get; set; }
         public int? testsRegistered { get; set; }
-        public int? passPercent { get; set; }
-        public int? pendingPercent { get; set; }
+        public double? passPercent { get; set; }
+        public double? pendingPercent { get; set; }
         public int? other { get; set; }
         public bool? hasOther { get; set; }
         public int? skipped { get; set; }
@@ -114,14 +117,14 @@ namespace CypressDashboardModel
         public string? title { get; set; }
         public string? fullFile { get; set; }
         public string? file { get; set; }
-        public List<object>?  beforeHooks { get; set; }
-        public List<object>?  afterHooks { get; set; }
+        public List<object>? beforeHooks { get; set; }
+        public List<object>? afterHooks { get; set; }
         public List<Test>? tests { get; set; }
-        public List<object>?  suites { get; set; }
+        public List<object>? suites { get; set; }
         public List<string>? passes { get; set; }
-        public List<object>?  failures { get; set; }
-        public List<object>?  pending { get; set; }
-        public List<object>?  skipped { get; set; }
+        public List<object>? failures { get; set; }
+        public List<object>? pending { get; set; }
+        public List<object>? skipped { get; set; }
         public int? duration { get; set; }
         public bool? root { get; set; }
         public bool? rootEmpty { get; set; }

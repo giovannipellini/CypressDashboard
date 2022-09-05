@@ -1,6 +1,4 @@
-﻿
-
-@code {
+﻿@code {
 	// Demonstrates how a parent component can supply parameters
 	[Parameter]
 	public CypressDashboardModel.CypressTestSummary? Summary { get; set; }
@@ -14,13 +12,34 @@
 		public string? Title { get; set; }
 		public int Result { get; set; }
 	}
+	//"/cypressvideos/00a3f60a-78f6-4ad4-bc38-bcc7f3f3a330/ambienti.cy.js.mp4"
+	public string GetVideoPath(CypressDashboardModel.Result result)
+	{
+		return $"/cypressvideos/{Summary._id}/{result.file.Split('\\').Last()}.mp4";
+	}
 
+	public string GetCode(String code)
+	{
+		return code; //.Replace(Environment.NewLine, "<br/>");
+	}
 	DataItem[]? testSummary;
+
+	public string TestStatus(CypressDashboardModel.Stats stat)
+	{
+		if (stat.passes < stat.tests) return "highlight_off";
+		return "done";
+	}
+
+	public string TestColor(CypressDashboardModel.Stats stat)
+	{
+		if (stat.passes < stat.tests) return "color:red;";
+		return "color:green;";
+	}
 }
 
 @if (Summary == null)
 {
-			<p>Loading...</p>
+	<p>Loading...</p>
 }
 else
 {
@@ -38,56 +57,92 @@ else
 			Title = "Tests Failed",
 			Result = Summary.nTestsFailed
 			}
-			};
+};
 	}
-			<h1>@Title</h1>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-lg-6 my-5">
+	<h4>@Title</h4>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-lg-6">
 
-						<RadzenChart ColorScheme="ColorScheme.Pastel">
-							<RadzenDonutSeries Fills=@(new [] { "#45ff71", "#ff3344" }) Data="@testSummary" CategoryProperty="Title" ValueProperty="Result"  >
+				<RadzenChart ColorScheme="ColorScheme.Pastel">
+					<RadzenDonutSeries Fills=@(new [] { "#45ff71", "#ff3344" }) Data="@testSummary" CategoryProperty="Title" ValueProperty="Result">
 
-								<TitleTemplate>
-									<div class="rz-donut-content">
-										<div>@((Summary.nTestsPassed*100)/Summary.nTests)%</div> 
+						<TitleTemplate>
+							<div class="rz-donut-content">
+								<div>@((Summary.nTestsPassed * 100) / Summary.nTests)%</div>
 
-									</div>
-								</TitleTemplate>
+							</div>
+						</TitleTemplate>
 
-							</RadzenDonutSeries>
-						</RadzenChart>
+					</RadzenDonutSeries>
+				</RadzenChart>
+			</div>
+
+			<div class="col-sm-12 col-lg-6">
+
+
+
+				<RadzenCard class="m-3" style="border-left: .25rem solid #4e73df!important">
+					<h3 class="h5">Tests summary:</h3>
+					<div class="d-flex flex-row">
+
+						<div>
+							<div>Test date:</div>
+							<b>@Summary.startTime</b>
+							<div class="mt-3">Duration: </div>
+							<b>@Summary.TotalDurationStr</b>
+						</div>
 					</div>
+				</RadzenCard>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-lg-12 my-1">
 
-					<div class="col-sm-12 col-lg-6 my-5">
 
-						
-						
-								 <RadzenCard>
-								<h4>@Summary._id</h4>
-								<RadzenAccordion Multiple="true">
-									<Items>
-									@foreach (var singletest in TestList)
-									{@foreach (var result in singletest.results)
-										{
-										<RadzenAccordionItem Text="@(result.fullFile + " (" + singletest.stats.passes + "/" + singletest.stats.tests+ ")" )" Icon="done_all" style="font-color:green;">
+
+					<RadzenCard>
+						<h5>Spec files:</h5>
+						<RadzenAccordion Multiple="true">
+							<Items>
+								@foreach (var singletest in TestList)
+								{@foreach (var result in singletest.results)
+									{
+										<RadzenAccordionItem Text="@(result.fullFile + " (" + singletest.stats.passes + "/" + singletest.stats.tests+ ")" )" Icon="@TestStatus(singletest.stats)" style="@TestColor(singletest.stats)">
+
+											<div class="container">
+												<video controls="controls" style="width:inherit">
+													@*<source src="/cypressvideos/00a3f60a-78f6-4ad4-bc38-bcc7f3f3a330/ambienti.cy.js.mp4" type="video/mp4" />*@
+													<source src="@GetVideoPath(result)" type="video/mp4" />
+												</video>
+											</div>
 											@foreach (var result in singletest.results)
-											foreach (var suite in result.suites)
-											foreach (var test in suite.tests)
-										{
-											<p>@test.title</p>
-										}
+												foreach (var suite in result.suites)
+													foreach (var test in suite.tests)
+													{
+														<h3>@test.title</h3>
+
+														<PrettyCode Code="@test.code"></PrettyCode>
+
+														@if (!String.IsNullOrEmpty(test.err.estack))
+														{
+															<div class="bg-danger">
+																@test.err.estack
+															</div>
+														}
+													}
 
 										</RadzenAccordionItem>
-										}}
-									</Items>
-								</RadzenAccordion>
-							</RadzenCard>
-							
-						
-					</div>
+									}}
+							</Items>
+						</RadzenAccordion>
+					</RadzenCard>
+
+
 				</div>
+
 			</div>
+		</div>
+	</div>
 }
 
 

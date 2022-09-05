@@ -18,20 +18,27 @@ namespace MongoWS.Controllers
 		}
 
        
-        [HttpGet("~/getsomething")]
-        public IEnumerable<CypressTest> Get(int nCountMax)
+        [HttpGet("~/GetLatestSummary")]
+        public IEnumerable<CypressTestSummary> GetLatestSummary(int nCountMax)
 		{
 			MongoDBAdapter adapter = new MongoDBAdapter();
-			return adapter.GetLastTests(nCountMax);
+			return adapter.GetLatestSummary(nCountMax);
 		}
 
-        [HttpGet("~/getothersomething")]
-        public IEnumerable<CypressTest> GetOtherTests()
+        [HttpGet("~/GetLatestTests")]
+        public IEnumerable<CypressTest> GetLatestTests(int nCountMax)
         {
             MongoDBAdapter adapter = new MongoDBAdapter();
-            return adapter.GetLastTests(1);
+            return adapter.GetLatestTests(nCountMax);
         }
 
+
+        [HttpGet("~/GetTest")]
+        public IEnumerable<CypressTest> GetTest(string uid)
+        {
+            MongoDBAdapter adapter = new MongoDBAdapter();
+            return adapter.GetTest(uid);
+        }
         //[HttpGet(Name = "GetLastTests2")]
         //public IEnumerable<CypressDashboard.CypressTest> Get2(int nCountMax)
         //{

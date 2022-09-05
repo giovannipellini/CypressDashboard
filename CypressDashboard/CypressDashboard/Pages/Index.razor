@@ -4,58 +4,41 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Cypress Dashboard</h1>
+<h1>Cypress Dashboard - VitaPowerTool</h1>
 
 
 @code {
 
 
-    CypressTest[] testList = new CypressTest[0];
+	CypressTest[] lastTest = new CypressTest[0];
 	CypressTestSummary[] summary = new CypressTestSummary[0];
 	protected override async Task OnInitializedAsync()
 	{
-		//var test = await Http.GetFromJsonAsync<CypressTest[]>("https://localhost:5001/getsomething");
-		testList = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata2.json");      
+		//lastTest = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata2.json");
+		
 
 		//currentCount = testList.Length;
 
 
-		summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("sample-data/cypresssummary1.json");
+		//summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("sample-data/cypresssummary1.json");
+		summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("https://localhost:5001/GetLatestSummary?nCountMax=10");
 
-
+		lastTest = await Http.GetFromJsonAsync<CypressTest[]>($"https://localhost:5001/GetTest?uid={summary[0]._id}");
 	}
-
-   
-      
-
-    }
+}
 
 
 
 
+@if (summary.Length > 0)
+{
+	<TestDetails Title="Last Run" Summary="summary[0]" TestList="lastTest"></TestDetails>
+}
 
-                @foreach (var item in summary)
-                {
-                    <TestSummary Summary="item"></TestSummary>
-                }
-            
-
- <RadzenCard class="m-3" style="border-left: .25rem solid #4e73df!important">
-                <h3 class="h5">Contact</h3>
-                <div class="d-flex flex-row">
-
-                    <div>
-                        <div>Employee</div>
-                        <b>ciao</b>
-                        <div class="mt-3">Company</div>
-                        <b>a tutti</b>
-                    </div>
-                </div>
-            </RadzenCard>
+@foreach (var item in summary)
+{
+	<TestSummary Summary="item"></TestSummary>
+}
 
 
-            @if (summary.Length>0)
-            {
-                <TestDetails Title="Last Run" Summary="summary[0]" TestList="testList"></TestDetails>
-            }
-            
+

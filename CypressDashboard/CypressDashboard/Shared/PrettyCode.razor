@@ -1,0 +1,81 @@
+﻿@code {
+	// Demonstrates how a parent component can supply parameters
+
+	[Parameter]
+	public String Code { get; set; }
+
+	public char[] separators = { ' ', '.', ')', '(', ';', '\n', '\'', '"' };
+
+	public string[] arrayKeyWords = { "abstract", "arguments", "await*", "boolean", "break", "byte", "case", "catch", "char", "class*", "const", "continue", "debugger", "default", "delete", "do", "double", "else", "enum*", "eval", "export*", "extends*", "false", "final", "finally", "float", "for", "function", "goto", "if", "implements", "import*", "in", "instanceof", "int", "interface", "let*", "long", "native", "new", "null", "package", "private", "protected", "public", "return", "short", "static", "super*", "switch", "synchronized", "this", "throw", "throws", "transient", "true", "try", "typeof", "var", "void", "volatile", "while", "with", "yield" };
+	public string[] cypressKeyWords = { "visit", "get", "should" };
+	public void insertWord(string word)
+	{
+		//<span style="font-family: Courier New, Courier, monospace; font-color: red;">
+		//	@word
+		//</span>
+	}
+	String word = "";
+}
+
+<div style="font-family: Courier New, Courier, monospace;">
+
+	@foreach (string line in Code.Split('\n'))
+	{
+		if (line.TrimStart().StartsWith("//"))
+		{
+			<span style="color: darkgreen; font-weight: 900;">
+				@line
+			</span>
+		}
+		else
+		{
+			bool isString = false;
+			char charString = ' ';
+			foreach (char c in line)
+			{
+				if (separators.Contains(c))
+				{
+					if (c == '\'' | c == '"')
+					{
+						if (isString & charString==c)
+						{
+							isString = false;
+							charString = ' ';
+						}
+						if(!isString)
+						{
+							isString = true;
+							charString = c;
+						}
+					}
+
+					insertWord(word);
+					insertWord(c.ToString());
+					string style = "";
+
+					if (arrayKeyWords.Contains(word))
+						style = "color: blue; font-weight: 900;";
+					if (cypressKeyWords.Contains(word))
+						style = "color: red; font-weight: 900;";
+					if (isString)
+						style = "color: brown;";
+
+					<span style="@style">
+						@word
+					</span>
+					word = "";
+
+
+					<span>
+						@c
+					</span>
+
+				}
+				else
+					word += c.ToString();
+			}
+		}
+		<br />
+	}
+</div>
+

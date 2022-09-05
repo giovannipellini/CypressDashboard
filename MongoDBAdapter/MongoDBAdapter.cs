@@ -29,12 +29,17 @@ namespace CypressDashboard
         /// </summary>
         /// <param name="nCountMax">max number of returned tests</param>
         /// <returns></returns>
-        public List<CypressTest> GetLastTests(int nCountMax)
+        public List<CypressTest> GetLatestTests(int nCountMax)
         {
             return testCollection.Find(FilterDefinition<CypressTest>.Empty).SortBy(field: x => x.stats.start).Limit(nCountMax).ToList();
         }
 
-        public List<CypressTestSummary> GetLatestRuns(int nCountMax)
+        public List<CypressTest> GetTest(string uid)
+        {
+            return testCollection.Find(x => x.stats.uid == uid).ToList();
+        }
+
+        public List<CypressTestSummary> GetLatestSummary(int nCountMax)
         {
 
             return testSummaryCollection.Find(FilterDefinition<CypressTestSummary>.Empty).Limit(nCountMax).ToList();
