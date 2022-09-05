@@ -7,8 +7,6 @@
 <h1>Cypress Dashboard</h1>
 
 
-<SurveyPrompt Title="How is Blazor working for you?" />
-
 @code {
 
 
@@ -58,6 +56,6 @@
 
             @if (summary.Length>0)
             {
-                <TestDetails Summary="summary[0]" TestList="testList"></TestDetails>
+                <TestDetails Title="Last Run" Summary="summary[0]" TestList="testList"></TestDetails>
             }
             

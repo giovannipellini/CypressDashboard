@@ -6,6 +6,8 @@
 	public CypressDashboardModel.CypressTestSummary? Summary { get; set; }
 	[Parameter]
 	public CypressDashboardModel.CypressTest[]? TestList { get; set; }
+	[Parameter]
+	public String Title { get; set; }
 
 	class DataItem
 	{
@@ -38,7 +40,7 @@ else
 			}
 			};
 	}
-			<h1>@Summary.startTime</h1>
+			<h1>@Title</h1>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-lg-6 my-5">
@@ -68,7 +70,7 @@ else
 									@foreach (var singletest in TestList)
 									{@foreach (var result in singletest.results)
 										{
-										<RadzenAccordionItem Text="@(result.fullFile + " (" + singletest.stats.passes + "/" + singletest.stats.tests+ ")" )" Icon="done" style="font-color:green;">
+										<RadzenAccordionItem Text="@(result.fullFile + " (" + singletest.stats.passes + "/" + singletest.stats.tests+ ")" )" Icon="done_all" style="font-color:green;">
 											@foreach (var result in singletest.results)
 											foreach (var suite in result.suites)
 											foreach (var test in suite.tests)
