@@ -1,18 +1,218 @@
 ﻿@page "/stats"
+@inject HttpClient Http
+@using CypressDashboardModel
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>Statistics</PageTitle>
 
-<h1>Counter</h1>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<h1>Statistic</h1>
 
 @code {
     private int currentCount = 0;
 
-    private void IncrementCount()
+
+	List<string> testList = new List<string>();
+	List<TestDuration> testDurations= new List<TestDuration>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		//lastTest = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata2.json");
+
+
+		//currentCount = testList.Length;
+
+
+		//summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("sample-data/cypresssummary1.json");
+		testList = await Http.GetFromJsonAsync<List<string>>("https://localhost:5001/GetTestList");
+
+        testDurations = await Http.GetFromJsonAsync<List<TestDuration>>($"https://localhost:5001/GetTestDuration?testName=search%20existing%20policy");
+
+
+		//https://localhost:7051/GetTestList
+		//https://localhost:7051/GetTestDuration?testName=Appunti%20page%20with%20correct%20content
+
+
+	}
+
+}
+
+
+
+
+
+<h1>Radzen Blazor Chart with line series</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 my-5">
+                <RadzenCard Class="w-100 mb-4" >
+                    <RadzenCheckBox @bind-Value="@smooth" Name="smooth"></RadzenCheckBox>
+                    <RadzenLabel Text="Smooth" For="smooth" Style="margin-left: 8px; vertical-align: middle;" />
+                    <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
+                    <RadzenLabel Text="Show Data Labels" For="dataLabels" Style="margin-left: 8px; vertical-align: middle;" />
+                </RadzenCard>
+                <RadzenChart>
+                    <RadzenLineSeries Smooth="@smooth" Data="@testDurations" CategoryProperty="startDate" Title="2019" LineType="LineType.Dashed" ValueProperty="duration">
+                        <RadzenMarkers MarkerType="MarkerType.Square" />
+                        <RadzenSeriesDataLabels Visible="@showDataLabels" />
+                    </RadzenLineSeries>
+              
+                    <RadzenCategoryAxis Padding="20" Formatter="@FormatDate" />
+                    <RadzenValueAxis Formatter="@FormatAsUSD">
+                        <RadzenGridLines Visible="true" />
+                        <RadzenAxisTitle Text="Duration in ms" />
+                    </RadzenValueAxis>
+                </RadzenChart>
+            </div>
+        </div>
+    </div>
+@code {
+    bool smooth = false;
+    bool showDataLabels = false;
+
+    class DataItem
     {
-        currentCount++;
+        public string Date { get; set; }
+        public double Revenue { get; set; }
     }
+
+    string FormatAsUSD(object value)
+    {
+        //return ((double)value).ToString("C0", CultureInfo.CreateSpecificCulture("en-US"));
+        return value.ToString();
+    }
+
+    string FormatDate(object value)
+    {
+        if (value != null)
+        {
+            return Convert.ToDateTime(value).ToString("dd/MM");
+        }
+
+        return string.Empty;
+    }
+
+    DataItem[] revenue2019 = new DataItem[] {
+        new DataItem
+        {
+            Date = ("2019-01-01"),
+            Revenue = 234000
+        },
+        new DataItem
+        {
+            Date = ("2019-02-01"),
+            Revenue = 269000
+        },
+        new DataItem
+        {
+            Date = ("2019-03-01"),
+            Revenue = 233000
+        },
+        new DataItem
+        {
+            Date = ("2019-04-01"),
+            Revenue = 244000
+        },
+        new DataItem
+        {
+            Date = ("2019-05-01"),
+            Revenue = 214000
+        },
+        new DataItem
+        {
+            Date = ("2019-06-01"),
+            Revenue = 253000
+        },
+        new DataItem
+        {
+            Date = ("2019-07-01"),
+            Revenue = 274000
+        },
+        new DataItem
+        {
+            Date = ("2019-08-01"),
+            Revenue = 284000
+        },
+        new DataItem
+        {
+            Date = ("2019-09-01"),
+            Revenue = 273000
+        },
+        new DataItem
+        {
+            Date = ("2019-10-01"),
+            Revenue = 282000
+        },
+        new DataItem
+        {
+            Date = ("2019-11-01"),
+            Revenue = 289000
+        },
+        new DataItem
+        {
+            Date = ("2019-12-01"),
+            Revenue = 294000
+        }
+    };
+
+    DataItem[] revenue2020 = new DataItem[] {
+        new DataItem
+        {
+            Date = ("2019-01-01"),
+            Revenue = 334000
+        },
+        new DataItem
+        {
+            Date = ("2019-02-01"),
+            Revenue = 369000
+        },
+        new DataItem
+        {
+            Date = ("2019-03-01"),
+            Revenue = 333000
+        },
+        new DataItem
+        {
+            Date = ("2019-04-01"),
+            Revenue = 344000
+        },
+        new DataItem
+        {
+            Date = ("2019-05-01"),
+            Revenue = 314000
+        },
+        new DataItem
+        {
+            Date = ("2019-06-01"),
+            Revenue = 353000
+        },
+        new DataItem
+        {
+            Date = ("2019-07-01"),
+            Revenue = 374000
+        },
+        new DataItem
+        {
+            Date = ("2019-08-01"),
+            Revenue = 384000
+        },
+        new DataItem
+        {
+            Date = ("2019-09-01"),
+            Revenue = 373000
+        },
+        new DataItem
+        {
+            Date = ("2019-10-01"),
+            Revenue = 382000
+        },
+        new DataItem
+        {
+            Date = ("2019-11-01"),
+            Revenue = 389000
+        },
+        new DataItem
+        {
+            Date = ("2019-12-01"),
+            Revenue = 394000
+        }
+    };
 }

@@ -39,6 +39,21 @@ namespace MongoWS.Controllers
             MongoDBAdapter adapter = new MongoDBAdapter();
             return adapter.GetTest(uid);
         }
+
+        [HttpGet("~/GetTestDuration")]
+        public List<TestDuration> GetTestDuration(string testName)
+        {
+            MongoDBAdapter adapter = new MongoDBAdapter();
+            return adapter.GetTestDuration(testName);
+        }
+
+
+        [HttpGet("~/GetTestList")]
+        public List<string> GetTestList()
+        {
+            MongoDBAdapter adapter = new MongoDBAdapter();
+            return adapter.GetTestList();
+        }
         //[HttpGet(Name = "GetLastTests2")]
         //public IEnumerable<CypressDashboard.CypressTest> Get2(int nCountMax)
         //{

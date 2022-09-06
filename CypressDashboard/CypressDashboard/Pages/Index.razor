@@ -24,6 +24,12 @@
 		summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("https://localhost:5001/GetLatestSummary?nCountMax=10");
 
 		lastTest = await Http.GetFromJsonAsync<CypressTest[]>($"https://localhost:5001/GetTest?uid={summary[0]._id}");
+
+
+		//https://localhost:7051/GetTestList
+		//https://localhost:7051/GetTestDuration?testName=Appunti%20page%20with%20correct%20content
+
+
 	}
 }
 
