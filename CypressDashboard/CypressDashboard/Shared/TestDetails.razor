@@ -32,7 +32,12 @@
 
 	public string TestColor(CypressDashboardModel.Stats stat)
 	{
-		if (stat.passes < stat.tests) return "color:red;";
+		return TestColorBool(stat.passes == stat.tests);
+	}
+
+	public string TestColorBool(bool testPassed)
+	{
+		if (!testPassed) return "color:red;";
 		return "color:green;";
 	}
 }
@@ -119,13 +124,13 @@ else
 												foreach (var suite in result.suites)
 													foreach (var test in suite.tests)
 													{
-														<h3>@test.title</h3>
+														<h3 style="@TestColorBool((bool)test.pass)">@test.title</h3>
 
 														<PrettyCode Code="@test.code"></PrettyCode>
 
 														@if (!String.IsNullOrEmpty(test.err.estack))
 														{
-															<div class="bg-danger">
+															<div class="code alert alert-danger" role="alert">
 																@test.err.estack
 															</div>
 														}

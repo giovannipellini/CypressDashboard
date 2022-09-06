@@ -62,3 +62,31 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+
+.code {
+    font-family: Courier New, Courier, monospace;
+}
+
+.code-keyword {
+    color: blue;
+    font-weight: 900;
+}
+
+
+.code-keyword {
+    color: cornflowerblue;
+    font-weight: 900;
+}
+
+
+.code-string {
+    color: saddlebrown;
+    color: darkgreen;
+    font-weight: 900;
+}
+
+.code-comment {
+    color: darkgreen;
+    font-weight: 900;
+}

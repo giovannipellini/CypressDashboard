@@ -17,13 +17,13 @@
 	String word = "";
 }
 
-<div style="font-family: Courier New, Courier, monospace;">
+<div class="code">
 
 	@foreach (string line in Code.Split('\n'))
 	{
 		if (line.TrimStart().StartsWith("//"))
 		{
-			<span style="color: darkgreen; font-weight: 900;">
+			<span class="code-comment">
 				@line
 			</span>
 		}
@@ -51,16 +51,16 @@
 
 					insertWord(word);
 					insertWord(c.ToString());
-					string style = "";
+					string _class = "";
 
 					if (arrayKeyWords.Contains(word))
-						style = "color: blue; font-weight: 900;";
+						_class = "code-keyword";
 					if (cypressKeyWords.Contains(word))
-						style = "color: red; font-weight: 900;";
+						_class = "code-cypresskeyword";
 					if (isString)
-						style = "color: brown;";
+						_class = "code-string";
 
-					<span style="@style">
+					<span class="@_class">
 						@word
 					</span>
 					word = "";
