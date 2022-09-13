@@ -12,10 +12,11 @@
 
 	CypressTest[] lastTest = new CypressTest[0];
 	CypressTestSummary[] summary = new CypressTestSummary[0];
+	CypressTestSummary currentSummary = new CypressTestSummary();
 	protected override async Task OnInitializedAsync()
 	{
 		//lastTest = await Http.GetFromJsonAsync<CypressTest[]>("sample-data/cypresstestdata2.json");
-		
+
 
 		//currentCount = testList.Length;
 
@@ -24,13 +25,25 @@
 		summary = await Http.GetFromJsonAsync<CypressTestSummary[]>("https://localhost:5001/GetLatestSummary?nCountMax=10");
 
 		lastTest = await Http.GetFromJsonAsync<CypressTest[]>($"https://localhost:5001/GetTest?uid={summary[0]._id}");
-
+		currentSummary = summary[0];
 
 		//https://localhost:7051/GetTestList
 		//https://localhost:7051/GetTestDuration?testName=Appunti%20page%20with%20correct%20content
 
 
 	}
+
+	private async void ShowMessage(string uid)
+	{
+		lastTest = await Http.GetFromJsonAsync<CypressTest[]>($"https://localhost:5001/GetTest?uid={uid}");
+		foreach (var item in summary)
+		{
+			if (item._id == uid)
+				currentSummary = item;
+		}
+	}
+
+
 }
 
 
@@ -38,12 +51,13 @@
 
 @if (summary.Length > 0)
 {
-	<TestDetails Title="Last Run" Summary="summary[0]" TestList="lastTest"></TestDetails>
+
+	<TestDetails Title="Last Run" Summary="currentSummary" TestList="lastTest"></TestDetails>
 }
 
 @foreach (var item in summary)
 {
-	<TestSummary Summary="item"></TestSummary>
+	<TestSummary Summary="item" OnClickCallback="@ShowMessage"></TestSummary>
 }
 
 
