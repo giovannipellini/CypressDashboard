@@ -20,3 +20,6 @@
 /CypressDashboard/MongoWS/bin/Release/net6.0
 /MongoDBAdapter/bin/Release/net6.0
 /CypressDashboard/CypressDashboard/wwwroot/CypressVideos
+/CypressDashboard/CypressDashboard/bin/Release/net6.0
+/CypressDashboard/CypressWS/bin
+/CypressDashboard/CypressWS/obj

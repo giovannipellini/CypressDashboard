@@ -32,12 +32,12 @@ namespace CypressDashboard
         /// <returns></returns>
         public List<CypressTest> GetLatestTests(int nCountMax)
         {
-            return testCollection.Find(FilterDefinition<CypressTest>.Empty).SortBy(field: x => x.stats.start).Limit(nCountMax).ToList();
+            return testCollection.Find(FilterDefinition<CypressTest>.Empty).SortByDescending(field: x => x.stats.start).Limit(nCountMax).ToList();
         }
 
         public List<CypressTest> GetTest(string uid)
         {
-            return testCollection.Find(x => x.stats.uid == uid).ToList();
+            return testCollection.Find(x => x.stats.uid == uid).SortByDescending(x => x.stats.duration).ToList();
         }
 
         public List<CypressTestSummary> GetLatestSummary(int nCountMax)
