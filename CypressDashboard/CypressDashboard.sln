@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32421.90
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CypressDashboard", "CypressDashboard\CypressDashboard.csproj", "{AD1A3ADE-D460-49E4-BD0A-952A0F2D5AE2}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CypressDashboardModel", "CypressDashboardModel\CypressDashboardModel.csproj", "{CC0FCC1D-29B2-4321-A34F-9E0F9B2E1174}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CypressWS", "CypressWS\CypressWS.csproj", "{4DE6FF92-8C21-4861-A2A6-970FB6F9F47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSplitter", "TestSplitter\TestSplitter.csproj", "{B3A742EF-23C2-4D0B-A7D6-7F739CAC9E56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4DE6FF92-8C21-4861-A2A6-970FB6F9F47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DE6FF92-8C21-4861-A2A6-970FB6F9F47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DE6FF92-8C21-4861-A2A6-970FB6F9F47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A742EF-23C2-4D0B-A7D6-7F739CAC9E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A742EF-23C2-4D0B-A7D6-7F739CAC9E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A742EF-23C2-4D0B-A7D6-7F739CAC9E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A742EF-23C2-4D0B-A7D6-7F739CAC9E56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
